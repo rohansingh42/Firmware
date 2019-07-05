@@ -115,7 +115,7 @@ static constexpr uint64_t COMMANDER_MONITORING_INTERVAL = 10_ms;
 
 static constexpr float STICK_ON_OFF_LIMIT = 0.9f;
 
-static constexpr uint64_t OFFBOARD_TIMEOUT = 500_ms;
+static constexpr uint64_t OFFBOARD_TIMEOUT = 10000_ms;
 static constexpr uint64_t HOTPLUG_SENS_TIMEOUT = 8_s;	/**< wait for hotplug sensors to come online for upto 8 seconds */
 static constexpr uint64_t PRINT_MODE_REJECT_INTERVAL = 500_ms;
 static constexpr uint64_t INAIR_RESTART_HOLDOFF_INTERVAL = 500_ms;
@@ -1318,7 +1318,8 @@ Commander::run()
 	int32_t rc_map_arm_switch = 0;
 
 	/* RC override auto modes */
-	int32_t rc_override = 0;
+	// int32_t rc_override = 0;
+	int32_t rc_override = 1;
 
 	int32_t takeoff_complete_act = 0;
 
